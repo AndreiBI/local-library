@@ -7,10 +7,7 @@ function getTotalAccountsCount(accounts) {
 }
 
 function getBooksBorrowedCount(books) {
-  const borrowedBooks = books.filter((book) => book.borrows[0].returned === false);
-
-  return borrowedBooks.length;
-  
+  return books.filter(book => !book.borrows[0].returned).length;
 }
 
 // This is a helper function that's called by other functions inside this file. You don't have to edit it.
